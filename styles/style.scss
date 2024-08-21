@@ -1,0 +1,154 @@
+@import "_mixins";
+// @import "_right-side-div.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    display: flex;
+    
+    .left-div {
+        width: 578px;
+        height: 100vh;
+        gap: 0px;
+        opacity: 0px;
+        background: #9be2df;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        .frame1 {
+            width:  (500px) ;
+            height:  (480px) ;
+            top: 176px;
+            left: 39px;
+            gap: 20px;
+            opacity: 0px;
+    
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+    
+            &__first-component {
+                width: 500px;
+    
+                .task-title {
+                    width: 65px;
+                    height: 18px;
+                    left: 7px;
+                }
+    
+                .input1 {
+                    @include input-left;
+                    height: 52px;
+                }
+            }
+    
+            &__second-component {
+                margin-top: 16px;
+    
+                .input2 {
+                    @include input-left;
+                    height: 92.28px;
+                }
+    
+                .input2::placeholder {
+                    @include placeholder;
+                }
+    
+                .task-title {
+                    @include task-title;
+                }
+            }
+    
+            .common-component-container {
+                display: flex;
+                gap: 18px;
+                height: 85px;
+    
+                .third-component {
+                    .task-title {
+                        @include task-title;
+                    }
+    
+                    .input3 {
+                        width: 240px;
+                        height: 52px;
+                        outline: none;
+                        border-radius: 10px;
+                        border: 1px solid #000000;
+                        
+                    }
+    
+                    .input3::placeholder {
+                        @include placeholder;
+                    }
+                }
+    
+                .fourth-component {
+                    .task-title {
+                        @include task-title;
+                    }
+    
+                    .input4 {
+                        width: 240px;
+                        height: 52px;
+                        outline: none;
+                        border-radius: 10px;
+                        border: 1px solid #000000;
+                    }
+    
+                    .input4::placeholder {
+                        @include placeholder;
+                    }
+                }
+            }
+    
+            &__fifth-component {
+                .task-title {
+                    @include task-title;
+                }
+    
+                .input5 {
+                    @include input-left;
+                    height: 52px;
+                }
+            }
+    
+            .button {
+                width: 500px;
+                height: 61px;
+                gap: 0px;
+                opacity: 0px;
+                margin-top: 23px;
+    
+                .btn {
+                    width: 500px;
+                    height: 61px;
+                    gap: 0px;
+                    border-radius: 10px;
+                    opacity: 0px;
+                    border: none;
+                    background-color: #000000;
+                    color: #fff;
+                }
+                .btn:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+
+    // right div 
+
+    .right-div{
+    .h1{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+}
+  
+}

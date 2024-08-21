@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="main">
+
+        <form class="left-div">
+            <div class="frame1">
+                <div class="frame1__first-component">
+                    <p class="task-title">Task Title</p>
+                    <input type="text" placeholder="Enter Task Title" class="input1" id="task-title">
+                </div>
+                <div class="frame1__second-component">
+                    <p class="task-title">Task Description</p>
+                    <input type="text" placeholder="description ..." class="input2" id="description">
+                </div>
+
+                <div class="common-component-container">
+
+                    <div class="third-component">
+                        <p class="task-title">Due Date</p>
+                        <input type="date" placeholder="DD/MM/YY" class="input3">
+                    </div>
+                    <div class="fourth-component">
+                        <p class="task-title">Priority</p>
+                        <select name="priority" id="priority" class="input4">
+                            <option value="high">High</option>
+                            <option value="medium">Medium</option>
+                            <option value="low">Low</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="frame1__fifth-component">
+                    <p class="task-title">Categories</p>
+                    <input type="text" placeholder="description ..." class="input5">
+                </div>
+
+                <div class="button">
+                    <button class="btn" type="submit">Add</button>
+                </div>
+            </div>
+        </form>
+        <div class="right-div">
+            <!-- <h1>Task Manager</h1> -->
+
+        </div>
+    </div>
+
+    <script src="./dist/output.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  display: flex;
+}
+.main .left-div {
+  width: 578px;
+  height: 100vh;
+  gap: 0px;
+  opacity: 0px;
+  background: #9be2df;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main .left-div .frame1 {
+  width: 500px;
+  height: 480px;
+  top: 176px;
+  left: 39px;
+  gap: 20px;
+  opacity: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.main .left-div .frame1__first-component {
+  width: 500px;
+}
+.main .left-div .frame1__first-component .task-title {
+  width: 65px;
+  height: 18px;
+  left: 7px;
+}
+.main .left-div .frame1__first-component .input1 {
+  width: 500px;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  outline: none;
+  height: 52px;
+}
+.main .left-div .frame1__second-component {
+  margin-top: 16px;
+}
+.main .left-div .frame1__second-component .input2 {
+  width: 500px;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  outline: none;
+  height: 92.28px;
+}
+.main .left-div .frame1__second-component .input2::placeholder {
+  width: 214.58px;
+  height: 31.94px;
+  top: 40.8px;
+  left: 17.78px;
+  gap: 0px;
+  opacity: 0px;
+}
+.main .left-div .frame1__second-component .task-title {
+  width: 112px;
+  height: 18px;
+  top: 10px;
+  left: 7px;
+  gap: 0px;
+  opacity: 0px;
+}
+.main .left-div .frame1 .common-component-container {
+  display: flex;
+  gap: 18px;
+  height: 85px;
+}
+.main .left-div .frame1 .common-component-container .third-component .task-title {
+  width: 112px;
+  height: 18px;
+  top: 10px;
+  left: 7px;
+  gap: 0px;
+  opacity: 0px;
+}
+.main .left-div .frame1 .common-component-container .third-component .input3 {
+  width: 240px;
+  height: 52px;
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid #000000;
+}
+.main .left-div .frame1 .common-component-container .third-component .input3::placeholder {
+  width: 214.58px;
+  height: 31.94px;
+  top: 40.8px;
+  left: 17.78px;
+  gap: 0px;
+  opacity: 0px;
+}
+.main .left-div .frame1 .common-component-container .fourth-component .task-title {
+  width: 112px;
+  height: 18px;
+  top: 10px;
+  left: 7px;
+  gap: 0px;
+  opacity: 0px;
+}
+.main .left-div .frame1 .common-component-container .fourth-component .input4 {
+  width: 240px;
+  height: 52px;
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid #000000;
+}
+.main .left-div .frame1 .common-component-container .fourth-component .input4::placeholder {
+  width: 214.58px;
+  height: 31.94px;
+  top: 40.8px;
+  left: 17.78px;
+  gap: 0px;
+  opacity: 0px;
+}
+.main .left-div .frame1__fifth-component .task-title {
+  width: 112px;
+  height: 18px;
+  top: 10px;
+  left: 7px;
+  gap: 0px;
+  opacity: 0px;
+}
+.main .left-div .frame1__fifth-component .input5 {
+  width: 500px;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  outline: none;
+  height: 52px;
+}
+.main .left-div .frame1 .button {
+  width: 500px;
+  height: 61px;
+  gap: 0px;
+  opacity: 0px;
+  margin-top: 23px;
+}
+.main .left-div .frame1 .button .btn {
+  width: 500px;
+  height: 61px;
+  gap: 0px;
+  border-radius: 10px;
+  opacity: 0px;
+  border: none;
+  background-color: #000000;
+  color: #fff;
+}
+.main .left-div .frame1 .button .btn:hover {
+  cursor: pointer;
+}
+.main .right-div .h1 {
+  font-family: Arial, Helvetica, sans-serif;
+}
