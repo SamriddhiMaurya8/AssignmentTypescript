@@ -13,22 +13,22 @@
             <div class="frame1">
                 <div class="frame1__first-component">
                     <p class="task-title">Task Title</p>
-                    <input type="text" placeholder="Enter Task Title" class="input1" id="task-title">
+                    <input type="text" placeholder="Enter Task Title" class="input1" id="task-title" required>
                 </div>
                 <div class="frame1__second-component">
                     <p class="task-title">Task Description</p>
-                    <input type="text" placeholder="description ..." class="input2" id="description">
+                    <input type="text" placeholder="description ..." class="input2" id="description" required>
                 </div>
 
                 <div class="common-component-container">
 
                     <div class="third-component">
                         <p class="task-title">Due Date</p>
-                        <input type="date" placeholder="DD/MM/YY" class="input3">
+                        <input type="date" placeholder="DD/MM/YY" class="input3" required>
                     </div>
                     <div class="fourth-component">
                         <p class="task-title">Priority</p>
-                        <select name="priority" id="priority" class="input4">
+                        <select name="priority" id="priority" class="input4" >
                             <option value="high">High</option>
                             <option value="medium">Medium</option>
                             <option value="low">Low</option>
@@ -37,7 +37,13 @@
                 </div>
                 <div class="frame1__fifth-component">
                     <p class="task-title">Categories</p>
-                    <input type="text" placeholder="description ..." class="input5">
+                    <div id="selected-options" class="selected-options"></div>
+                    <select class="input5" id="Category" required>
+                        <option value="" id="option">Choose Priority</option>
+                        <option value="work">Work</option>
+                        <option value="Personal">Personal</option>
+                        <option value="home">Home</option>
+                    </select>
                 </div>
 
                 <div class="button">

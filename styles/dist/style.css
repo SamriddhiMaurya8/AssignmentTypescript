@@ -5,6 +5,7 @@
 
 .main {
   display: flex;
+  background: red;
 }
 .main .left-div {
   width: 578px;
@@ -133,6 +134,10 @@
   border: 1px solid #000000;
   outline: none;
   height: 52px;
+}
+.main .left-div .frame1__fifth-component .selected-options {
+  display: flex;
+  gap: 12px;
 }
 .main .left-div .frame1 .button {
   width: 500px;

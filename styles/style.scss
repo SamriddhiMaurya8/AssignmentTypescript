@@ -8,7 +8,7 @@
 
 .main{
     display: flex;
-    
+    background:red;
     .left-div {
         width: 578px;
         height: 100vh;
@@ -114,6 +114,10 @@
                 .input5 {
                     @include input-left;
                     height: 52px;
+                }
+                .selected-options{
+                    display: flex;
+                    gap: 12px;
                 }
             }
     
