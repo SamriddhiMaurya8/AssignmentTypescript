@@ -2,157 +2,445 @@
 // @import "_right-side-div.scss";
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.main{
-    display: flex;
-    background:red;
-    .left-div {
-        width: 578px;
-        height: 100vh;
+body {
+  height: 100vh;
+  // overflow: hidden;
+}
+.main {
+  display: flex;
+ 
+  .left-div {
+    width: 30%;
+    height: 100vh;
+    position: fixed;
+
+    background: #9be2df;
+    // display: flex;
+    padding: 30px 10px;
+
+    .frame1 {
+      padding: 30px;
+
+      width: 100%;
+
+      gap: 20px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      &__first-component {
+        .task-title {
+          height: 18px;
+        }
+
+        .input1 {
+          @include input-left;
+          height: 52px;
+        }
+      }
+
+      &__second-component {
+        margin-top: 16px;
+
+        .input2 {
+          @include input-left;
+          height: 80px;
+        }
+
+        .input2::placeholder {
+          @include placeholder;
+        }
+
+        .task-title {
+          @include task-title;
+        }
+      }
+
+      // .common-component-container {
+      //   display: flex;
+      //   gap: 18px;
+      //   // height: 85px;
+
+      //   .third-component {
+      //     .task-title {
+      //       @include task-title;
+      //     }
+
+      //     .input3 {
+
+      //       height: 52px;
+      //       width: 100%;
+      //       outline: none;
+      //       border-radius: 10px;
+      //       border: 1px solid #000000;
+      //     }
+
+      //     .input3::placeholder {
+      //       @include placeholder;
+      //     }
+      //   }
+
+      //   .fourth-component {
+      //     .task-title {
+      //       @include task-title;
+      //     }
+
+      //     .input4 {
+
+      //       height: 52px;
+      //       outline: none;
+      //       width: 100%;
+      //       border-radius: 10px;
+      //       border: 1px solid #000000;
+      //     }
+
+      //     .input4::placeholder {
+      //       @include placeholder;
+      //     }
+      //   }
+      // }
+      .common-component-container {
+        display: flex;
+        gap: 18px;
+
+        .third-component,
+        .fourth-component {
+          flex: 1;
+
+          .task-title {
+            @include task-title;
+          }
+
+          .input3,
+          .input4 {
+            height: 52px;
+            width: 100%;
+            outline: none;
+            border-radius: 10px;
+            border: 1px solid #000000;
+          }
+
+          .input3::placeholder,
+          .input4::placeholder {
+            @include placeholder;
+          }
+        }
+      }
+
+      // &__fifth-component {
+      //   .task-title {
+      //     @include task-title;
+      //   }
+
+      //   .selected-options {
+      //     display: flex;
+      //     gap: 12px;
+      //     flex-direction: column;
+      //     .input5 {
+      //       @include input-left;
+      //       height: 52px;
+            
+      //     }
+      //     .select-categories-div{
+      //       display: none;
+      //     }
+      //   }
+      // }
+
+      // &__fifth-component {
+      //   .task-title {
+      //     @include task-title;
+      //   }
+      
+      //   .selected-options {
+      //     display: flex;
+      //     gap: 12px;
+      //     flex-direction: column;
+      //     position: relative; // Set position relative to this container
+      
+      //     .input5 {
+      //       @include input-left;
+      //       height: 52px;
+      //     }
+      
+      //     .select-categories-div {
+      //       // display: none;
+      //       position: absolute; 
+      //       top: 100%; 
+         
+      //       width: 100%;
+           
+      
+      //       .dropdown {
+      //         display: none;
+      //         cursor: pointer;
+      //         padding: 8px;
+      //         border: 1px solid #ccc;
+      //         border-radius: 4px;
+      //         background-color: #fff;
+      //         &:hover {
+      //           background-color: #f0f0f0;
+      //         }
+      //       }    
+      //     }
+      //   }
+      // }
+      
+      &__fifth-component {
+        .task-title {
+          @include task-title;
+        }
+      
+        .selected-options {
+          display: flex;
+          flex-direction: column; 
+          gap: 12px; 
+          position: relative; 
+      
+          .select-categories-div {
+           
+            position: absolute; 
+        
+            width: 10%; 
+            left: 80%;
+            height: 90%;
+            margin-top: 3px;
+      
+           border: none;
+          }
+          .tag {
+            display: inline-flex;
+            align-items: center;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            
+            padding: 4px 8px;
+            margin: 4px;
+          }
+      
+          .remove-tag {
+            margin-left: 8px;
+            cursor: pointer;
+            color: #ff0000;
+          }
+      
+          .input5 {
+            @include input-left;
+            height: 52px;
+            position: relative;
+            z-index: 0; 
+          }
+        }
+      }
+      
+      
+
+      .button {
+        height: 61px;
         gap: 0px;
         opacity: 0px;
-        background: #9be2df;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    
-        .frame1 {
-            width:  (500px) ;
-            height:  (480px) ;
-            top: 176px;
-            left: 39px;
-            gap: 20px;
-            opacity: 0px;
-    
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-    
-            &__first-component {
-                width: 500px;
-    
-                .task-title {
-                    width: 65px;
-                    height: 18px;
-                    left: 7px;
-                }
-    
-                .input1 {
-                    @include input-left;
-                    height: 52px;
-                }
-            }
-    
-            &__second-component {
-                margin-top: 16px;
-    
-                .input2 {
-                    @include input-left;
-                    height: 92.28px;
-                }
-    
-                .input2::placeholder {
-                    @include placeholder;
-                }
-    
-                .task-title {
-                    @include task-title;
-                }
-            }
-    
-            .common-component-container {
-                display: flex;
-                gap: 18px;
-                height: 85px;
-    
-                .third-component {
-                    .task-title {
-                        @include task-title;
-                    }
-    
-                    .input3 {
-                        width: 240px;
-                        height: 52px;
-                        outline: none;
-                        border-radius: 10px;
-                        border: 1px solid #000000;
-                        
-                    }
-    
-                    .input3::placeholder {
-                        @include placeholder;
-                    }
-                }
-    
-                .fourth-component {
-                    .task-title {
-                        @include task-title;
-                    }
-    
-                    .input4 {
-                        width: 240px;
-                        height: 52px;
-                        outline: none;
-                        border-radius: 10px;
-                        border: 1px solid #000000;
-                    }
-    
-                    .input4::placeholder {
-                        @include placeholder;
-                    }
-                }
-            }
-    
-            &__fifth-component {
-                .task-title {
-                    @include task-title;
-                }
-    
-                .input5 {
-                    @include input-left;
-                    height: 52px;
-                }
-                .selected-options{
-                    display: flex;
-                    gap: 12px;
-                }
-            }
-    
-            .button {
-                width: 500px;
-                height: 61px;
-                gap: 0px;
-                opacity: 0px;
-                margin-top: 23px;
-    
-                .btn {
-                    width: 500px;
-                    height: 61px;
-                    gap: 0px;
-                    border-radius: 10px;
-                    opacity: 0px;
-                    border: none;
-                    background-color: #000000;
-                    color: #fff;
-                }
-                .btn:hover{
-                    cursor: pointer;
-                }
-            }
+        margin-top: 23px;
+
+        .btn {
+          width: 100%;
+          height: 61px;
+          gap: 0px;
+          border-radius: 10px;
+          opacity: 0px;
+          border: none;
+          background-color: #000000;
+          color: #fff;
         }
+        .btn:hover {
+          cursor: pointer;
+        }
+      }
     }
+  }
 
+  // right div
 
-    // right div 
-
-    .right-div{
-    .h1{
-        font-family: Arial, Helvetica, sans-serif;
+  .right-div {
+    padding: 20px;
+    width: 100%;
+    margin-left: 30%;
+    height: 100vh;
+    // overflow-y: auto;
+    h1 {
+      margin: 8px 34px;
+      font-family: Arial, Helvetica, sans-serif;
     }
+    .search-box {
+      width: 100%;
+      height: 52px;
+      padding-left: 12px;
+      outline: none;
+      border-radius: 10px;
+      border: 1px solid #000000;
+    }
+    // .right-common-container {
+    //   display: flex;
+    //   gap: 15px;
+    //   .first-div {
+    //     .task-title {
+    //       @include task-title;
+    //     }
 
+    //     .input5 {
+    //       border-radius: 10px;
+    //       border: 1px solid #000000;
+    //       outline: none;
+    //       height: 52px;
+    //       // width: 392px;
+    //     }
+    //     .selected-options {
+    //       display: flex;
+    //       gap: 12px;
+    //     }
+    //   }
+    //   .second-div {
+    //     .task-title {
+    //       @include task-title;
+    //     }
+
+    //     .priority-second {
+    //       width: 177px;
+    //       height: 52px;
+    //       outline: none;
+    //       border-radius: 10px;
+    //       border: 1px solid #000000;
+    //     }
+    //   }
+    //   .third-div {
+    //     .task-title {
+    //       @include task-title;
+    //     }
+
+    //     .progress {
+    //       width: 177px;
+    //       height: 52px;
+    //       outline: none;
+    //       border-radius: 10px;
+    //       border: 1px solid #000000;
+    //     }
+    //   }
+    // }
+
+    .right-common-container {
+      display: flex;
+      gap: 15px; 
+    
+     
+      .first-div {
+        flex: 2; 
+    
+        .task-title {
+          @include task-title;
+        }
+    
+        .input5 {
+          width: 100%;
+          height: 52px;
+          outline: none;
+          border-radius: 10px;
+          border: 1px solid #000000;
+        }
+    
+        .selected-options {
+          display: flex;
+          gap: 12px; 
+        }
+      }
+
+
+
+      
+    
+      
+      .second-div,
+      .third-div {
+        flex: 1; 
+    
+        .task-title {
+          @include task-title;
+        }
+    
+        .priority-second,
+        .progress {
+          width: 100%;
+          height: 52px;
+          outline: none;
+          border-radius: 10px;
+          border: 1px solid #000000;
+        }
+      }
+    }
+    
+
+    
+    .task-div {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px; 
+      // max-width: 100%;
+      // overflow-y: auto;
+      .task-one {
+        
+        border: 1px solid #000000;
+        display: flex;
+        justify-content: space-between;
+        .left-side {
+          padding: 10px;
+          width: 5%;
+        }
+        .right-side {
+          width: 90%;
+          display: flex;
+          flex-direction: column; 
+          gap: 7px; 
+         
+          padding: 10px;
+          .date-time {
+            color: red;
+          }
+          .tags {
+            display: flex;
+            gap: 17px;
+
+            .tag1 {
+              @include tags;
+              width: 48px;
+            }
+            .tag2 {
+              @include tags;
+              width: 66px;
+            }
+          }
+        }
+       .cornerDiv{
+        width: 5%;
+        .trash-icon{
+          // padding: 23px;
+          margin-top: 11px;
+        }
+        .trash-icon:hover{
+          cursor: pointer;
+        }
+
+       }
+
+
+       
+      }
+    }
+  }
 }
-  
-}
+

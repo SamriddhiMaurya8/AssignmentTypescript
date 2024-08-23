@@ -1,71 +1,36 @@
-const taskTitle = document.getElementById("task-title") as HTMLInputElement;
-const description = document.getElementById("description") as HTMLInputElement;
-const addBtn = document.querySelector(".btn") as HTMLButtonElement;
+// const categorySelect = document.getElementById('Category') as HTMLSelectElement;
+// const selectedOptions = document.getElementById('selected-options') as HTMLDivElement;
 
-addBtn.addEventListener("click", function (e) {
-  e.preventDefault();
-
-  if (taskTitle) {
-    const titleValue = taskTitle.value;
-    console.log(titleValue);
-  } else {
-    console.error(" not found");
-  }
-  if (description) {
-    const descriptionVal = description.value;
-    console.log(descriptionVal);
-  } else {
-    console.error(" not found");
-  }
-});
-
-const categorySelect = document.getElementById("Category") as HTMLSelectElement;
-const selectedOptions = document.getElementById(
-  "selected-options"
-) as HTMLDivElement;
-
-categorySelect.addEventListener("change", () => {
-  const selectedValue = categorySelect.value;
-  const selectedText = categorySelect.options[categorySelect.selectedIndex].text;
-  // console.log(selectedText);
-  const option = document.getElementById('option')  as HTMLInputElement;
-  const optionDiv = document.createElement("div");
-  optionDiv.textContent = selectedText;
-
-//   option.appendChild(optionDiv) ; 
-
-
-
-  const removeBtn = document.createElement("span");
-  removeBtn.textContent = " ×";
-  removeBtn.style.cursor = "pointer";
-
-  optionDiv.appendChild(removeBtn);
-  selectedOptions.appendChild(optionDiv);
-
-  categorySelect.value = " ";
-  removeBtn.addEventListener("click", function () {
-    selectedOptions.removeChild(optionDiv);
-  });
-});
-
-// categorySelect.addEventListener('change', ()=> {
+// categorySelect.addEventListener('change', function () {
+//     const selectedText = categorySelect.options[categorySelect.selectedIndex]?.text;
 //     const selectedValue = categorySelect.value;
-//     const selectedText = categorySelect.options[categorySelect.selectedIndex].text;
 
-//     const optionDiv = document.createElement('div');
-//     optionDiv.textContent = selectedText;
+//     if (selectedValue && selectedText) {
+//         // Check if the tag already exists
+//         if (![...selectedOptions.querySelectorAll('.tag')].some(tag => tag.textContent.includes(selectedText))) {
+//             const tagDiv = document.createElement('div');
+//             tagDiv.classList.add('tag');
+//             tagDiv.textContent = selectedText;
 
-//     const removeBtn = document.createElement('span');
-//     removeBtn.textContent = ' ×';
-//     removeBtn.style.cursor = 'pointer';
+//             const removeBtn = document.createElement('span');
+//             removeBtn.textContent = ' ×';
+//             removeBtn.classList.add('remove-tag');
+//             removeBtn.addEventListener('click', function () {
+//                 selectedOptions.removeChild(tagDiv);
+//             });
 
-//     optionDiv.appendChild(removeBtn);
-//     selectedOptions.appendChild(optionDiv);
+//             tagDiv.appendChild(removeBtn);
+//             selectedOptions.insertBefore(tagDiv, categorySelect.nextElementSibling); // Insert before select element
 
-//     categorySelect.value = "";
+//             // Ensure no more than 5 tags
+//             if (selectedOptions.querySelectorAll('.tag').length > 5) {
+//                 selectedOptions.removeChild(selectedOptions.querySelector('.tag'));
+//             }
+//         }
 
-//     removeBtn.addEventListener('click', function() {
-//         selectedOptions.removeChild(optionDiv);
-//     });
+//         // Clear the select value
+//         categorySelect.value = '';
+//     }
 // });
+
+
