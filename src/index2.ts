@@ -1,5 +1,5 @@
 
-// correct 
+// working  
 
 // add tags to input container while taking input 
 const selectElement = document.getElementById('select-categories-div') as HTMLSelectElement;
@@ -29,34 +29,95 @@ function addCategories() {
 selectElement.addEventListener('change', addCategories);
 
 
+//adding tags for filtering the content 
 
-// Select the dropdown and input container elements
 const categoryDropdown = document.getElementById('select-categories-divv') as HTMLSelectElement;
 const tagContainer = document.querySelector('.input-containerr') as HTMLDivElement;
 
-// Function to add selected categories as tags
 function addTag() {
     const selectedCategory = categoryDropdown.value.trim();
 
     if (selectedCategory) {
-        // Create a new div for the tag
+      
         const tagElement = document.createElement("div");
         tagElement.className = "cate-item";
         tagElement.innerHTML = `${selectedCategory} <span class="tag-remove">×</span>`;
 
-        // Add click event to the remove button
+       
         const removeTag = tagElement.querySelector(".tag-remove") as HTMLSpanElement;
         removeTag.addEventListener("click", () => {
             tagContainer.removeChild(tagElement);
+            filterTasksByTags();
         });
 
-        // Append the tag to the container
+ 
         tagContainer.appendChild(tagElement);
 
-        // Reset the dropdown to default option
         categoryDropdown.value = "";
+
+        filterTasksByTags() ; 
     }
 }
 
-// Add event listener to the dropdown for the change event
 categoryDropdown.addEventListener('change', addTag);
+
+
+
+
+
+
+
+
+
+//actual filtering is done here
+
+
+function filterTasksByTags() {
+    const selectedTags: string[] = [];
+
+    const tagElements = tagContainer.querySelectorAll('.cate-item');
+    
+    
+    for (let i = 0; i < tagElements.length; i++) {
+        const tagElement = tagElements[i] as HTMLElement;
+        const tagText = tagElement.textContent?.split(' ×')[0].trim().toLowerCase() || '';
+        selectedTags.push(tagText);
+    }
+    
+    const tasks = document.querySelectorAll(".task-one");
+
+
+    tasks.forEach(taskElement => {
+        const taskEl = taskElement as HTMLElement;
+
+        const taskTags: string[] = [];
+        const tagElements = taskEl.querySelectorAll('.tags .tag');
+        
+      
+        for (let j = 0; j < tagElements.length; j++) {
+            const tagElement = tagElements[j] as HTMLElement;
+            const tagText = tagElement.textContent?.trim().toLowerCase() || '';
+            taskTags.push(tagText);
+        }
+
+        
+        const hasAllTags = selectedTags.length === 0 || selectedTags.every(tag => taskTags.indexOf(tag) !== -1);
+
+      
+        taskEl.style.display = hasAllTags ? 'flex' : 'none';
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadTasksFromLocalStorage();
+    filterTasksByTags();
+});
+
+
+
+
+
+
+
+
+

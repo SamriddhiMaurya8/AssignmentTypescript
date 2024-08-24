@@ -60,6 +60,9 @@ function loadTasksFromLocalStorage() {
   }
 }
 
+
+
+//function for creating the tasks dynamically 
 function createTasks(name?: string, desc?: string, dateValue?: string, priorityValue?: string, tags?: string[],  isChecked?: boolean) {
   const taskOneDiv = document.createElement("div");
   taskOneDiv.classList.add("task-one");
@@ -128,26 +131,10 @@ function createTasks(name?: string, desc?: string, dateValue?: string, priorityV
   const tagsDiv = document.createElement("div");
   tagsDiv.classList.add("tags");
 
-  // const tag1 = document.createElement("div");
-  // tag1.classList.add("tag1");
-  // tag1.textContent = tags ? tags[0] : "Work";
-
-  // const tag2 = document.createElement("div");
-  // tag2.classList.add("tag2");
-  // tag2.textContent = tags ? tags[1] : "Personal";
-
-  // tagsDiv.appendChild(tag1);
-  // tagsDiv.appendChild(tag2);
+ 
 
 
-//   const inputTags = inputContainer.querySelectorAll(".cate-item");
-//   inputTags.forEach(tagElement => {
-//       const tagText = (tagElement as HTMLElement).textContent?.split(' ×')[0] || "";
-//       const tagDiv = document.createElement("div");
-//       tagDiv.classList.add("tag");
-//       tagDiv.textContent = tagText;
-//       tagsDiv.appendChild(tagDiv);
-//   });
+
 
 
   if (tags && tags.length > 0) {
@@ -219,35 +206,46 @@ function createTasks(name?: string, desc?: string, dateValue?: string, priorityV
   }
 }
 
-function sortTasksByPriority(order: string) {
-    
-    if (!taskContainer) {
-      console.error("Task container not found");
-      return;
-    }
+
+//sorting of priority
   
-    const taskElements = Array.from(taskContainer.querySelectorAll(".task-one"));
+function sortTasksByPriority(order: 'LowToHigh' | 'HighToLow'): void {
+    if (!taskContainer) {
+        console.error("Task container not found");
+        return;
+    }
+
     const priorityMap: { [key: string]: number } = { Low: 1, Medium: 2, High: 3 };
 
-    taskElements.sort((a, b) => {
+    
+    const taskElements = Array.from(taskContainer.querySelectorAll(".task-one")) as HTMLElement[];
 
-      const priorityA = (a.querySelector(".priorityBottom")?.textContent?.trim().replace(' Priority', '') || "Low") as keyof typeof priorityMap;
-      const priorityB = (b.querySelector(".priorityBottom")?.textContent?.trim().replace(' Priority', '') || "Low") as keyof typeof priorityMap;
-  
-      const priorityAValue = priorityMap[priorityA] ?? 0;
-      const priorityBValue = priorityMap[priorityB] ?? 0;
-  
-      return priorityAValue - priorityBValue;
+ 
+    taskElements.sort((a, b) => {
+        const getPriorityValue = (el: HTMLElement): number => {
+            const priorityText = el.querySelector(".priorityBottom")?.textContent?.trim().replace(' Priority', '') || "Low";
+            return priorityMap[priorityText] || 0;
+        };
+
+        const priorityAValue = getPriorityValue(a as HTMLElement);
+        const priorityBValue = getPriorityValue(b as HTMLElement);
+
+      
+        return priorityAValue - priorityBValue;
     });
-  
+
+    
     if (order === "LowToHigh") {
-      taskElements.reverse();
+        taskElements.reverse();
     }
-  
+
     taskContainer.innerHTML = "";
-    taskElements.forEach(task => taskContainer.appendChild(task));
-  }
-  
+    taskElements.forEach((task) => taskContainer.appendChild(task));
+}
+
+
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   loadTasksFromLocalStorage();
@@ -257,8 +255,7 @@ document.addEventListener("DOMContentLoaded", () => {
 addBtn.addEventListener("click", function (e) {
   e.preventDefault();
 
-//   const tags = Array.from(inputContainer.querySelectorAll(".cate-item"))
-//   .map(tag => (tag as HTMLElement).textContent?.split(' ×')[0] || "");
+
 const tags: string[] = [];
 const tagElements = inputContainer.querySelectorAll(".cate-item");
 
@@ -293,6 +290,9 @@ for (let i = 0; i < tagElements.length; i++) {
     filterTasks(); 
   });
   
+
+
+  //filter tasks acccording to search and priority
   function filterTasks() {
     const searchText = searchBox.value.toLowerCase(); 
     const filterValue = progressFilter.value; 
