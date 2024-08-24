@@ -220,7 +220,7 @@ function createTasks(name?: string, desc?: string, dateValue?: string, priorityV
 }
 
 function sortTasksByPriority(order: string) {
-    const taskContainer = document.querySelector(".task-div");
+    
     if (!taskContainer) {
       console.error("Task container not found");
       return;
@@ -257,9 +257,16 @@ document.addEventListener("DOMContentLoaded", () => {
 addBtn.addEventListener("click", function (e) {
   e.preventDefault();
 
-  const tags = Array.from(inputContainer.querySelectorAll(".cate-item"))
-  .map(tag => (tag as HTMLElement).textContent?.split(' ×')[0] || "");
+//   const tags = Array.from(inputContainer.querySelectorAll(".cate-item"))
+//   .map(tag => (tag as HTMLElement).textContent?.split(' ×')[0] || "");
+const tags: string[] = [];
+const tagElements = inputContainer.querySelectorAll(".cate-item");
 
+for (let i = 0; i < tagElements.length; i++) {
+    const tagElement = tagElements[i] as HTMLElement;
+    const tagText = tagElement.textContent?.split(' ×')[0] || "";
+    tags.push(tagText);
+}
   createTasks();
   saveTasksToLocalStorage();
 
@@ -267,6 +274,8 @@ addBtn.addEventListener("click", function (e) {
   description.value = '';
   dateJS.value = '';
   priority.value = 'Low';
+  inputContainer.innerHTML='' ; 
+  
 });
 
   priorityDropdown.addEventListener("change", function () {

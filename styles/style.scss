@@ -134,6 +134,7 @@ body {
               height: 100%;
               margin-bottom: 2px;
               border-radius: 0 15px 15px 0;
+              cursor: pointer;
             }
           }
         }
@@ -204,21 +205,21 @@ body {
           border: 1px solid #000000;
         }
 
-        .selected-options {
+        .selected-optionss {
           display: flex;
           border: 1px solid black;
 
           height: 53px;
           border-radius: 15px;
 
-          .input-container {
+          .input-containerr{
             border-radius: 15px 0 0 15px;
             background-color: #fff;
             width: 75%;
             padding: 15px;
             display: flex;
             gap: 13px;
-            flex-wrap: wrap;
+            // flex-wrap: wrap;
 
             .cate-item {
               background: #9be2db;
@@ -235,7 +236,7 @@ body {
             }
           }
 
-          .div {
+          .divv {
             outline: none;
             border: none;
 

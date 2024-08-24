@@ -180,7 +180,6 @@ function createTasks(name, desc, dateValue, priorityValue, tags, isChecked) {
     }
 }
 function sortTasksByPriority(order) {
-    const taskContainer = document.querySelector(".task-div");
     if (!taskContainer) {
         console.error("Task container not found");
         return;
@@ -205,15 +204,24 @@ document.addEventListener("DOMContentLoaded", () => {
     loadTasksFromLocalStorage();
 });
 addBtn.addEventListener("click", function (e) {
+    var _a;
     e.preventDefault();
-    const tags = Array.from(inputContainer.querySelectorAll(".cate-item"))
-        .map(tag => { var _a; return ((_a = tag.textContent) === null || _a === void 0 ? void 0 : _a.split(' ×')[0]) || ""; });
+    //   const tags = Array.from(inputContainer.querySelectorAll(".cate-item"))
+    //   .map(tag => (tag as HTMLElement).textContent?.split(' ×')[0] || "");
+    const tags = [];
+    const tagElements = inputContainer.querySelectorAll(".cate-item");
+    for (let i = 0; i < tagElements.length; i++) {
+        const tagElement = tagElements[i];
+        const tagText = ((_a = tagElement.textContent) === null || _a === void 0 ? void 0 : _a.split(' ×')[0]) || "";
+        tags.push(tagText);
+    }
     createTasks();
     saveTasksToLocalStorage();
     taskTitle.value = '';
     description.value = '';
     dateJS.value = '';
     priority.value = 'Low';
+    inputContainer.innerHTML = '';
 });
 priorityDropdown.addEventListener("change", function () {
     const selectedValue = priorityDropdown.value;
@@ -272,6 +280,30 @@ function addCategories() {
     }
 }
 selectElement.addEventListener('change', addCategories);
+// Select the dropdown and input container elements
+const categoryDropdown = document.getElementById('select-categories-divv');
+const tagContainer = document.querySelector('.input-containerr');
+// Function to add selected categories as tags
+function addTag() {
+    const selectedCategory = categoryDropdown.value.trim();
+    if (selectedCategory) {
+        // Create a new div for the tag
+        const tagElement = document.createElement("div");
+        tagElement.className = "cate-item";
+        tagElement.innerHTML = `${selectedCategory} <span class="tag-remove">×</span>`;
+        // Add click event to the remove button
+        const removeTag = tagElement.querySelector(".tag-remove");
+        removeTag.addEventListener("click", () => {
+            tagContainer.removeChild(tagElement);
+        });
+        // Append the tag to the container
+        tagContainer.appendChild(tagElement);
+        // Reset the dropdown to default option
+        categoryDropdown.value = "";
+    }
+}
+// Add event listener to the dropdown for the change event
+categoryDropdown.addEventListener('change', addTag);
 // const taskTitle = document.getElementById("task-title") as HTMLInputElement;
 // const description = document.getElementById("description") as HTMLInputElement;
 // const addBtn = document.querySelector(".btn") as HTMLButtonElement;

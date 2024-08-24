@@ -137,6 +137,7 @@ body {
   height: 100%;
   margin-bottom: 2px;
   border-radius: 0 15px 15px 0;
+  cursor: pointer;
 }
 .main .left-div .frame1 .button {
   height: 61px;
@@ -193,22 +194,21 @@ body {
   border-radius: 10px;
   border: 1px solid #000000;
 }
-.main .right-div .right-common-container .first-div .selected-options {
+.main .right-div .right-common-container .first-div .selected-optionss {
   display: flex;
   border: 1px solid black;
   height: 53px;
   border-radius: 15px;
 }
-.main .right-div .right-common-container .first-div .selected-options .input-container {
+.main .right-div .right-common-container .first-div .selected-optionss .input-containerr {
   border-radius: 15px 0 0 15px;
   background-color: #fff;
   width: 75%;
   padding: 15px;
   display: flex;
   gap: 13px;
-  flex-wrap: wrap;
 }
-.main .right-div .right-common-container .first-div .selected-options .input-container .cate-item {
+.main .right-div .right-common-container .first-div .selected-optionss .input-containerr .cate-item {
   background: #9be2db;
   height: 23px;
   border-radius: 23px;
@@ -216,14 +216,14 @@ body {
   justify-content: center;
   padding: 7px 7px;
 }
-.main .right-div .right-common-container .first-div .selected-options .input-container .cate-item .tag-remove {
+.main .right-div .right-common-container .first-div .selected-optionss .input-containerr .cate-item .tag-remove {
   cursor: pointer;
 }
-.main .right-div .right-common-container .first-div .selected-options .div {
+.main .right-div .right-common-container .first-div .selected-optionss .divv {
   outline: none;
   border: none;
 }
-.main .right-div .right-common-container .first-div .selected-options .div select {
+.main .right-div .right-common-container .first-div .selected-optionss .divv select {
   border: none;
   outline: none;
   height: 100%;
