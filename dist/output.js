@@ -188,9 +188,9 @@ function sortTasksByPriority(order) {
     taskContainer.innerHTML = "";
     taskElements.forEach((task) => taskContainer.appendChild(task));
 }
-document.addEventListener("DOMContentLoaded", () => {
-    loadTasksFromLocalStorage();
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   loadTasksFromLocalStorage();
+// });
 addBtn.addEventListener("click", function (e) {
     var _a;
     e.preventDefault();

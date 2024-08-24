@@ -247,9 +247,9 @@ function sortTasksByPriority(order: 'LowToHigh' | 'HighToLow'): void {
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  loadTasksFromLocalStorage();
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   loadTasksFromLocalStorage();
+// });
 
 
 addBtn.addEventListener("click", function (e) {
