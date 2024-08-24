@@ -1,187 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task Manager</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-</head>
-<body>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
     <div class="main">
-        <form class="left-div">
-            <div class="frame1">
-                <div class="frame1__first-component">
-                    <p class="task-title">Task Title</p>
-                    <input type="text" placeholder="Enter Task Title" class="input1" id="task-title" required>
-                </div>
-                <div class="frame1__second-component">
-                    <p class="task-title">Task Description</p>
-                    <input type="text" placeholder="description ..." class="input2" id="description" required>
-                </div>
+      <form class="left-div">
+        <div class="frame1">
+          <div class="frame1__first-component">
+            <p class="task-title">Task Title</p>
+            <input
+              type="text"
+              placeholder="Enter Task Title"
+              class="input1"
+              id="task-title"
+              required
+            />
+          </div>
+          <div class="frame1__second-component">
+            <p class="task-title">Task Description</p>
+            <input
+              type="text"
+              placeholder="description ..."
+              class="input2"
+              id="description"
+              required
+            />
+          </div>
 
-                <div class="common-component-container">
-
-                    <div class="third-component">
-                        <p class="task-title">Due Date</p>
-                        <input type="date" placeholder="DD/MM/YY" class="input3" id="date" required>
-                    </div>
-                    <div class="fourth-component">
-                        <p class="task-title">Priority</p>
-                        <select name="priority" id="priority" class="input4" >
-                            <option value=" High">High</option>
-                            <option value="Medium">Medium</option>
-                            <option value="Low">Low</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="frame1__fifth-component">
-                    <p class="task-title">Categories</p>
-                    <div id="selected-options" class="selected-options">
-                        <div class="input-container">
-                            <input class="input5" placeholder="Select Category" id="Category" required>             
-                        </div>
-                    <select class="select-categories-div" >
-                        <option value="" id="option"></option>
-                        <option value="work">Work</option>
-                        <option value="Personal">Personal</option>
-                        <option value="home">Home</option>
-                    </select>
-                </input>
-                </div>
-                </div>
-
-                <div class="button">
-                    <button class="btn" type="submit">Add</button>
-                </div>
+          <div class="common-component-container">
+            <div class="third-component">
+              <p class="task-title">Due Date</p>
+              <input
+                type="date"
+                placeholder="DD/MM/YY"
+                class="input3"
+                id="date"
+                required
+              />
             </div>
-        </form>
-        <div class="right-div">
-            <h1>Task Manager</h1>
+            <div class="fourth-component">
+              <p class="task-title">Priority</p>
+              <select name="priority" id="priority" class="input4">
+                <option value=" High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            </div>
+          </div>
+          <div class="frame1__fifth-component">
+            <p class="task-title">Categories</p>
 
+            <div id="selected-options" class="selected-options">
+              <div class="input-container"></div>
+              <div class="div">
+                <select
+                  class="select-categories-div"
+                  id="select-categories-div"
+                >
+                  <option value="" id="option">Select Catgories</option>
+                  <option value="work">Work</option>
+                  <option value="Personal">Personal</option>
+                  <option value="home">Home</option>
+                </select>
+              </div>
+            </div>
+          </div>
 
-
-            <!-- <div class="top-div"> -->
-                <div class="search-div">
-                    <p class="task-title">Search</p>
-                    <input type="text" placeholder="Search from title, description" class="search-box">
-                </div>
-                <div class="right-common-container">
-                    <div class="first-div">
-                        <p class="task-title">Filter By Categories</p>
-                        <div id="selected-options" class="selected-options"></div>
-                        <select class="input5" id="Category" required>
-                            <option value="" id="option">Choose Priority</option>
-                            <option value="work">Work</option>
-                            <option value="Personal">Personal</option>
-                            <option value="home">Home</option>
-                        </select>
-                    </div>
-                    <div class="second-div">
-                        <p class="task-title">Sort By Priority</p>
-                        <select class="priority-second" >
-                            <option value="">Choose..</option>
-                            <option value="HighToLow">High to Low</option>
-                            <option value="LowToHigh">Low to High</option>
-                        </select>
-                    </div>
-                    <div class="third-div">
-                        <p class="task-title">Filter</p>
-                        <select class="progress" >
-                            <option value="">Choose Filter</option>
-                            <option value="completed">Completed</option>
-                            <option value="incomplete">Incomplete</option>
-                        </select>
-                    </div>
-                </div>
-                
-                
-                
-                <div class="task-div">
-
-                    <!-- <div class="task-one">
-                        <div class="left-side">
-                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                        </div>
-                        <div class="right-side">
-
-                            <h3 class="task-name">  Webpack Assignment</h3>
-                            <p class="date-time">Thu May 12 2024     |     12:10 in the afternoon     |     High Priority</p>
-                            <div class="tags">
-      
-                                <div class="tag1">Work</div>
-                                <div class="tag2">Personal</div>
-                            </div>
-                            <p class="desc">At its core, webpack is a static module bundler for modern JavaScript applications. When webpack processes your application.</p>
-                        </div>
-                    </div> -->
-
-
-                    <!-- <div class="task-one">
-                        <div class="left-side">
-                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                        </div>
-                        <div class="right-side">
-
-                            <h3 class="task-name">  Webpack Assignment</h3>
-                            <p class="date-time">Thu May 12 2024     |     12:10 in the afternoon     |     High Priority</p>
-                            <div class="tags">
-      
-                                <div class="tag1">Work</div>
-                                <div class="tag2">Personal</div>
-                            </div>
-                            <p class="desc">At its core, webpack is a static module bundler for modern JavaScript applications. When webpack processes your application.</p>
-                        </div>
-                    </div> -->
-
-
-
-                    <!-- <div class="task-one">
-                        <div class="left-side">
-                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                        </div>
-                        <div class="right-side">
-
-                            <h3 class="task-name">  Webpack Assignment</h3>
-                            <p class="date-time">Thu May 12 2024     |     12:10 in the afternoon     |     High Priority</p>
-                            <div class="tags">
-      
-                                <div class="tag1">Work</div>
-                                <div class="tag2">Personal</div>
-                            </div>
-                            <p class="desc">At its core, webpack is a static module bundler for modern JavaScript applications. When webpack processes your application.</p>
-                        </div>
-                    </div> -->
-                    <!-- <div class="task-one">
-                        <div class="left-side">
-                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                        </div>
-                        <div class="right-side">
-
-                            <h3 class="task-name">  Webpack Assignment</h3>
-                            <p class="date-time">Thu May 12 2024     |     12:10 in the afternoon     |     High Priority</p>
-                            <div class="tags">
-      
-                                <div class="tag1">Work</div>
-                                <div class="tag2">Personal</div>
-                            </div>
-                            <p class="desc">At its core, webpack is a static module bundler for modern JavaScript applications. When webpack processes your application.</p>
-                        </div>
-                    </div> -->
-
-
-
-
-
-
-                </div>
-            <!-- </div> -->
-
+          <div class="button">
+            <button class="btn" type="submit">Add</button>
+          </div>
         </div>
+      </form>
+      <div class="right-div">
+        <h1>Task Manager</h1>
+
+        <!-- <div class="top-div"> -->
+        <div class="search-div">
+          <p class="task-title">Search</p>
+          <input
+            type="text"
+            placeholder="Search from title, description"
+            class="search-box"
+          />
+        </div>
+        <div class="right-common-container">
+          <div class="first-div">
+            <p class="task-title">Filter By Categories</p>
+
+            <div id="selected-options" class="selected-options">
+              <div class="input-container"></div>
+              <div class="div">
+                <select
+                  class="select-categories-div"
+                  id="select-categories-div"
+                >
+                  <option value="" id="option">Select Catgories</option>
+                  <option value="work">Work</option>
+                  <option value="Personal">Personal</option>
+                  <option value="home">Home</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="second-div">
+            <p class="task-title">Sort By Priority</p>
+            <select class="priority-second">
+              <option value="all">Choose..</option>
+              <option value="LowToHigh">High to Low</option>
+              <option value="HighToLow">Low to High</option>
+            </select>
+          </div>
+          <div class="third-div">
+            <p class="task-title">Filter</p>
+            <select class="progress">
+              <option value="all">Choose Filter</option>
+              <option value="completed">Completed</option>
+              <option value="incomplete">Incomplete</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="task-div"></div>
+      </div>
     </div>
 
     <script src="./dist/output.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
-</body>
+  </body>
 </html>
